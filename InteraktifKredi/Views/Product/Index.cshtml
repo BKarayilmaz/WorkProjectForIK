@@ -1,0 +1,33 @@
+﻿@model List<InteraktifKredi.Data.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var x in Model)
+{
+    <div class="card" style="width: 250px; height: 400px; margin-right:10px; margin-bottom:15px; float: left;">
+        <img class="card-img-top" src="~/Images/@x.ImageUrl">
+        <div class="card-body">
+            <h5 class="card-title">@x.ProductName</h5>
+            <p class="card-text">@x.Description.</p>
+        </div>
+        <div class="card-footer">
+            <a href="/Product/LikeProduct/@x.ProductID" class="card-link" style="color:grey;"><i onclick="myFunction(this)" class="fa fa-thumbs-up">@x.LikeCount Like</i></a>
+            <a href="#" class="card-link"><i class="fa fa-eye"> @x.ShowCount View</i></a>
+        </div>
+    </div>
+}
+
+@*<a href="/Login/Index/" class="btn btn-success">Login</a>*@
+
+
+
+<script>
+    function myFunction(x) {
+        x.classList.toggle("fa-thumbs-down");
+    }
+</script>
+

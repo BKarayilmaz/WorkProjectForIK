@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Admin Panel</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        .outer {
+            display: table;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .middle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .inner {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            /* Whatever width you want */
+        }
+    </style>
+
+</head>
+<body style="background-color:grey">
+
+
+    <div class="outer">
+        <div class="middle">
+            <div class="inner">
+                <div class="container">
+                    <div class="center-box">
+
+                        <h2 class="text-center">Market Management </h2>
+                        <h2 class="text-center">System</h2>
+                        <form method="post" action="~/Login/Index">
+                            <div class="mb-3">
+                                <label>Username</label>
+                                <div data-validate="Enter username">
+                                    <input class="form-control" type="text" name="UserName">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Password</label>
+                                <input class="form-control" type="password" name="Password">
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model List<InteraktifKredi.Data.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Product List</h1>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Picture</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        if (x.IsDeleted == false)
+        {
+            <tr>
+                <th style="height:150px; width:150px;"><img class="card-img-top" style="height: 100%; width: 100%; " src="~/Images/@x.ImageUrl"></th>
+                <td>@x.ProductName</td>
+                <td>@x.Price$ </td>
+                <td>@x.Stock</td>
+                <td><a href="/Panel/DeleteProduct/@x.ProductID" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Panel/GetProduct/@x.ProductID" class="btn btn-success">Update</a></td>
+            </tr>
+        }
+
+    }
+
+</table>
+
+<a href="/Panel/AddProduct/" class="btn btn-primary">Add Product</a>
+
+
+
+
